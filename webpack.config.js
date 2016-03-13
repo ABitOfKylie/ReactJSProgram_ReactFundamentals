@@ -6,6 +6,9 @@ var HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
 });
 
 module.exports = {
+  resolve: {
+    extensions: ['', '.jsx', '.js'], // Recognize .jsx files
+  },
   entry: [
     './app/index.jsx',
   ],
