@@ -1,5 +1,6 @@
 var React = require('react');
 
+var helperGitHub = require('../utils/githubHelpers');
 var ConfirmBattle = require('../components/ConfirmBattle');
 
 // Components
@@ -20,6 +21,10 @@ var ConfirmBattleContainer = React.createClass({
 		console.log('Component Did Mount');
 		var query = this.props.location.query;
 		// Update the state from somewhere
+		helperGitHub.getInfo([
+			query.playerOne,
+			query.playerTwo,
+		]);
 	},
 	componentWillReceiveProps: function() {
 		console.log('Component Will Receive Props');
