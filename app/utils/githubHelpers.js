@@ -5,7 +5,7 @@ var secret = 'SECRET_ID';
 var param = ''; // '?client_id='+id+'&client_secret='+sec';
 
 function getUserInfo(username) {
-  axios.get('https://api.github.com/users/' + username + param);
+  return axios.get('https://api.github.com/users/' + username + param);
 }
 
 var helpers = {
@@ -13,7 +13,11 @@ var helpers = {
     return axios.all(players.map(function(username) {
       return getUserInfo(username);
     })).then(function(info) {
-      console.log('GitHub: ',info);
+      return info.map(function(user_info) {
+        return user_info.data;
+      });
+    }).catch(function(err) {
+      console.warn('Error in GitHub API', err);
     });
   },
 }

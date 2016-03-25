@@ -24,7 +24,12 @@ var ConfirmBattleContainer = React.createClass({
 		helperGitHub.getInfo([
 			query.playerOne,
 			query.playerTwo,
-		]);
+		]).then(function(players) {
+			this.setState({
+				isLoading: false,
+				playersInfo: [players[0],players[1]],
+			})
+		}.bind(this));
 	},
 	componentWillReceiveProps: function() {
 		console.log('Component Will Receive Props');

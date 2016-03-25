@@ -3,6 +3,11 @@ var PropTypes = React.PropTypes;
 
 var styles = require('../styles');
 
+function puke(obj) {
+	return <pre>{JSON.stringify(obj, null, ' ')}</pre>
+
+}
+
 function ConfirmBattle(props) {
 	if (props.isLoading === true) {
 		return (
@@ -10,7 +15,7 @@ function ConfirmBattle(props) {
 		)
 	} else {
 		return (
-			<p>Confirm Battle!</p>
+			<div>Confirm Battle!: {puke(props)}</div>
 		)
 	}
 }
