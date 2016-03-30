@@ -11,10 +11,10 @@ var Home = React.createClass({
 				<h1>Github Battle</h1>
 				<p className='lead'>Motto über alles</p>
 				<Link to='/playerOne'>
-					<button className='button' className='btn btn-lg btn-success'>Start</button>
+					<button className='button btn btn-lg btn-success'>Start</button>
 				</Link>
 			</div>
-		)
+		);
 	}
 });
 

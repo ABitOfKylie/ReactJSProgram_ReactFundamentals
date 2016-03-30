@@ -28,7 +28,7 @@ var ConfirmBattleContainer = React.createClass({
 			this.setState({
 				isLoading: false,
 				playersInfo: [players[0],players[1]],
-			})
+			});
 		}.bind(this));
 	},
 	componentWillReceiveProps: function() {
@@ -37,13 +37,22 @@ var ConfirmBattleContainer = React.createClass({
 	componentWillUnmount: function() {
 		console.log('Component Will Unmount');
 	},
+	handleConfirmBattle: function() {
+		this.context.router.push({
+			pathname: '/results',
+			state: {
+				playersInfo: this.state.playersInfo,
+			},
+		});
+	},
 	render: function() {
 		return (
 			<ConfirmBattle
 				isLoading={this.state.isLoading}
+				onConfirm={this.handleConfirmBattle}
 				playersInfo={this.state.playersInfo}
 			/>
-		)
+		);
 	},
 });
 
