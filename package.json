@@ -28,6 +28,9 @@
     "webpack": "~1.12.14",
     "html-webpack-plugin": "~2.10.0",
     "babel-core": "~6.7.2",
-    "babel-preset-react": "~6.5.0"
+    "babel-preset-react": "~6.5.0",
+    "syntastic-react": "~1.0.3",
+    "jshint": "~2.9.1",
+    "react-tools": "~0.13.3"
   }
 }
